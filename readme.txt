@@ -1,7 +1,7 @@
 === Publish Confirm ===
 Contributors: pluginkollektiv
 Tags: publish, posts, confirm, confirmation, dialogue
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAQUT9RLPW8QN
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LG5VC9KXMAYXJ
 Requires at least: 3.9
 Tested up to: 4.2.2
 Stable tag: trunk
@@ -45,20 +45,13 @@ add_filter(
 
 
 = Authors =
-* [Sergej Müller](http://wpcoder.de)
+* [Sergej Müller](https://sergejmueller.github.io/)
 * [Caspar Hübinger](http://glueckpress.com)
 
 
 = Donuts =
 * [Flattr](https://flattr.com/thing/536e5e2d0ce8de72eccc08731a4514e6)
 * [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAQUT9RLPW8QN)
-
-
-= Profiles =
-* [Google+](https://plus.google.com/+SergejMüller)
-* [Twitter](https://twitter.com/wpSEO)
-* [Impressum](http://wpcoder.de)
-
 
 
 == Changelog ==
