@@ -49,9 +49,9 @@ add_filter(
 * [Caspar Hübinger](http://glueckpress.com)
 
 
-= Donuts =
+= Donations =
 * [Flattr](https://flattr.com/thing/536e5e2d0ce8de72eccc08731a4514e6)
-* [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZAQUT9RLPW8QN)
+* [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LG5VC9KXMAYXJ)
 
 
 == Changelog ==
