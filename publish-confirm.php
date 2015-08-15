@@ -37,33 +37,33 @@ defined('ABSPATH') OR exit;
 
 /* Backend only */
 if ( ! is_admin() ) {
-    return;
+	return;
 }
 
 /* Fire! */
 define(
-    'PUBLISH_CONFIRM_BASE',
-    plugin_basename(__FILE__)
+	'PUBLISH_CONFIRM_BASE',
+	plugin_basename( __FILE__ )
 );
 
 require_once(
-    sprintf(
-        '%s/inc/publish_confirm.class.php',
-        dirname(__FILE__)
-    )
+	sprintf(
+		'%s/inc/publish_confirm.class.php',
+		dirname( __FILE__ )
+	)
 );
 
 add_action(
-    'admin_footer-post-new.php',
-    array(
-        'Publish_Confirm',
-        'inject_js'
-    )
+	'admin_footer-post-new.php',
+	array(
+		'Publish_Confirm',
+		'inject_js'
+	)
 );
 add_action(
-    'admin_footer-post.php',
-    array(
-        'Publish_Confirm',
-        'inject_js'
-    )
+	'admin_footer-post.php',
+	array(
+		'Publish_Confirm',
+		'inject_js'
+	)
 );
