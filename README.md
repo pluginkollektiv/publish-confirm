@@ -13,7 +13,7 @@ Extra confirmation dialogue for the publish button to avoid accidental publishin
 
 
 ## Description ##
-Accidentally published a WordPress post too early once too often, instead of saving it as a draft? The WordPress plugin *Publish Confirm* implements an extra confirmation dialogue between your click on the *Publish* button and its actual processing. Simple and effective—never publish by accident again!
+Accidentally published a WordPress post too early once too often, instead of saving it as a draft? This lightweight WordPress plugin implements an extra confirmation dialogue between your click on the *Publish* button and its actual processing. Simple and effective—never publish by accident again!
 
 Once a post has been published, the confirmation dialogue will not appear anymore for that post.
 
