@@ -31,6 +31,16 @@ class Publish_Confirm {
 			return;
 		}
 
+		/* Optionally exlcude post types */
+		$exclude_from_post_types = apply_filters(
+			'publish_confirm_exclude_post_types',
+			array()
+		);
+
+		if ( in_array( get_post()->post_type, (array) $exclude_from_post_types ) ) {
+			return;
+		}
+
 		/* jQuery loaded? */
 		if ( ! wp_script_is('jquery', 'done') ) {
 			return;

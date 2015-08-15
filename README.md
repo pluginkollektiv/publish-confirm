@@ -45,6 +45,16 @@ Yes, it does.
 ### And Custom Post Types? ###
 Yup.
 
+### Can I _exclude_ a custom post type from this plugin’s functionality? ##
+You can via PHP filter from a custom plugin or from your theme’s functions.php:
+
+`add_filter(
+	'publish_confirm_exclude_post_types',
+	function () {
+		return array( 'my_excluded_cpt', 'another_excluded_cpt' );
+	}
+);`
+
 ### Is there any way to change the default dialogue message into something else? ###
 The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme’s functions.php:
 
