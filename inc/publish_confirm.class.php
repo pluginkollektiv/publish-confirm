@@ -32,12 +32,24 @@ class Publish_Confirm {
 		}
 
 		/* Optionally exlcude post types */
-		$exclude_from_post_types = apply_filters(
+		$post_type =get_post()->post_type;
+
+		$exclude_post_types = apply_filters(
 			'publish_confirm_exclude_post_types',
 			array()
 		);
 
-		if ( in_array( get_post()->post_type, (array) $exclude_from_post_types ) ) {
+		if ( in_array( $post_type, (array) $exclude_post_types ) ) {
+			return;
+		}
+
+		/* Optionally only include given post types */
+		$include_post_types = apply_filters(
+			'publish_confirm_include_post_types',
+			array()
+		);
+
+		if ( has_filter( 'publish_confirm_include_post_types' ) && ! in_array( $post_type, (array) $include_post_types ) ) {
 			return;
 		}
 

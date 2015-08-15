@@ -45,13 +45,23 @@ Yes, it does.
 ### And Custom Post Types? ###
 Yup.
 
-### Can I _exclude_ a custom post type from this plugin’s functionality? ##
-You can via PHP filter from a custom plugin or from your theme’s functions.php:
+### Can I exclude a custom post type from this plugin’s functionality? ###
+Yes, you can via PHP filter from a custom plugin or from your theme’s functions.php:
 
 `add_filter(
 	'publish_confirm_exclude_post_types',
 	function () {
 		return array( 'my_excluded_cpt', 'another_excluded_cpt' );
+	}
+);`
+
+### Can I include only certain post types, not all? ###
+Yes, to see the confirm dialogue only when publishing a post or page, you can do:
+
+`add_filter(
+	'publish_confirm_include_post_types',
+	function () {
+		return array( 'post', 'page' );
 	}
 );`
 
