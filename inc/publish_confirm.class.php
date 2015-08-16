@@ -34,17 +34,10 @@ class Publish_Confirm {
 		/* Optionally include/exclude post types */
 		$current_pt = get_post()->post_type;
 
-		// Get public PTs as default.
-		$default_pts = get_post_types( array( 'public' => true ) );
-
-		// Exclude attachments from default stack.
-		if ( isset( $default_pts[ 'attachment' ] ) )
-			unset( $default_pts[ 'attachment' ] );
-
 		// Filter post types
 		$include_pts = apply_filters(
 			'publish_confirm_post_types',
-			$default_pts
+			get_post_types()
 		);
 
 		// Bail if current PT is not in PT stack.

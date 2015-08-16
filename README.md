@@ -46,12 +46,31 @@ Yes, it does.
 Yup.
 
 ### Can I limit/extend the plugin’s functionality for a custom selection of post types? ###
-Yes, you can, via PHP filter from a custom plugin or from your theme’s functions.php. By default, the plugin will consider all [registered post types](https://developer.wordpress.org/reference/functions/register_post_type/) that are public, excluding attachments. If your custom post type is public and you want to exclude it from the confirmation dialogue, you can do:
+Yes, you can, via PHP filter from a custom plugin or from your theme’s functions.php. By default, the plugin will consider all [registered post types](https://developer.wordpress.org/reference/functions/register_post_type/). As an example, you could only have a confirmation dialogue for public post types, excluding attachments, like this:
 
 `add_filter(
 	'publish_confirm_post_types',
 	function ( $post_types ) {
-		unset( $post_types[ 'your_custom_post_type' ] );
+
+		$post_types = get_post_types( array( 'public' => true ) );
+
+		if ( isset( $post_types[ 'attachment' ] ) ) {
+			unset( $post_types[ 'attachment' ] );
+		}
+
+		return $post_types;
+	}
+);`
+
+Or you can exclude your particular custom post type from the confirmation dialogue like so:
+
+`add_filter(
+	'publish_confirm_post_types',
+	function ( $post_types ) {
+
+		if ( isset( $post_types[ 'your_custom_post_type' ] ) ) {
+			unset( $post_types[ 'your_custom_post_type' ] );
+		}
 
 		return $post_types;
 	}
@@ -61,17 +80,17 @@ Yes, you can, via PHP filter from a custom plugin or from your theme’s functio
 The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme’s functions.php:
 
 `add_filter(
-    'publish_confirm_message',
-    function( $msg ) {
-        return "You’re about to send this out into the world.\nHave you added a kitten pic?";
-    }
+	'publish_confirm_message',
+	function( $msg ) {
+		return "You’re about to send this out into the world.\nHave you added a kitten pic?";
+	}
 );`
 
 
 ## Changelog ##
 ### 0.1 ###
 * standardized text domain to include a dash instead of an underscore
-* added filter to manage wich post types the plugin functionality will apply to
+* added filter to manage which post types the plugin functionality will apply to
 * updated author and contributors
 
 ### 0.0.6 / 22.04.2015 ###
