@@ -31,25 +31,24 @@ class Publish_Confirm {
 			return;
 		}
 
-		/* Optionally exlcude post types */
-		$post_type =get_post()->post_type;
+		/* Optionally include/exclude post types */
+		$current_pt = get_post()->post_type;
 
-		$exclude_post_types = apply_filters(
-			'publish_confirm_exclude_post_types',
-			array()
+		// Get public PTs as default.
+		$default_pts = get_post_types( array( 'public' => true ) );
+
+		// Exclude attachments from default stack.
+		if ( isset( $default_pts[ 'attachment' ] ) )
+			unset( $default_pts[ 'attachment' ] );
+
+		// Filter post types
+		$include_pts = apply_filters(
+			'publish_confirm_post_types',
+			$default_pts
 		);
 
-		if ( in_array( $post_type, (array) $exclude_post_types ) ) {
-			return;
-		}
-
-		/* Optionally only include given post types */
-		$include_post_types = apply_filters(
-			'publish_confirm_include_post_types',
-			array()
-		);
-
-		if ( has_filter( 'publish_confirm_include_post_types' ) && ! in_array( $post_type, (array) $include_post_types ) ) {
+		// Bail if current PT is not in PT stack.
+		if ( ! in_array( $current_pt, (array) $include_pts ) ) {
 			return;
 		}
 

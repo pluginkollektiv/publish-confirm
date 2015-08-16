@@ -45,23 +45,15 @@ Yes, it does.
 ### And Custom Post Types? ###
 Yup.
 
-### Can I exclude a custom post type from this plugin’s functionality? ###
-Yes, you can via PHP filter from a custom plugin or from your theme’s functions.php:
+### Can I limit/extend the plugin’s functionality for a custom selection of post types? ###
+Yes, you can, via PHP filter from a custom plugin or from your theme’s functions.php. By default, the plugin will consider all [registered post types](https://developer.wordpress.org/reference/functions/register_post_type/) that are public, excluding attachments. If your custom post type is public and you want to exclude it from the confirmation dialogue, you can do:
 
 `add_filter(
-	'publish_confirm_exclude_post_types',
-	function () {
-		return array( 'my_excluded_cpt', 'another_excluded_cpt' );
-	}
-);`
+	'publish_confirm_post_types',
+	function ( $post_types ) {
+		unset( $post_types[ 'your_custom_post_type' ] );
 
-### Can I include only certain post types, not all? ###
-Yes, to see the confirm dialogue only when publishing a post or page, you can do:
-
-`add_filter(
-	'publish_confirm_include_post_types',
-	function () {
-		return array( 'post', 'page' );
+		return $post_types;
 	}
 );`
 
@@ -79,8 +71,7 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 ## Changelog ##
 ### 0.1 ###
 * standardized text domain to include a dash instead of an underscore
-* added filter to limit plugin functionality to given post types
-* added filter to exclude given post types from plugin functionality
+* added filter to manage wich post types the plugin functionality will apply to
 * updated author and contributors
 
 ### 0.0.6 / 22.04.2015 ###
