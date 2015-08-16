@@ -9,7 +9,7 @@ Text Domain: publish-confirm
 Domain Path: /lang
 License:     GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version:     0.0.6
+Version:     0.1
 */
 
 /*

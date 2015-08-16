@@ -77,6 +77,12 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 ## Changelog ##
+### 0.1 ###
+* standardized text domain to include a dash instead of an underscore
+* added filter to limit plugin functionality to given post types
+* added filter to exclude given post types from plugin functionality
+* updated author and contributors
+
 ### 0.0.6 / 22.04.2015 ###
 * WordPress 4.2 support
 * Russian translation
