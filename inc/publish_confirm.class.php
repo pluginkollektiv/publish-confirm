@@ -70,12 +70,12 @@ class Publish_Confirm {
 		/* Message not changed? */
 		if ( $msg === $default ) {
 			load_plugin_textdomain(
-				'publish_confirm',
+				'publish-confirm',
 				false,
 				dirname( PUBLISH_CONFIRM_BASE ). '/lang/'
 			);
 
-			$msg = __( $default, 'publish_confirm' );
+			$msg = __( $default, 'publish-confirm' );
 		}
 
 		/* Print javascript */
