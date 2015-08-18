@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Publish Confirm
-Description: Extra confirmation dialogue for the publish button, avoids accidental publishing.
+Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
 Author:      pluginkollektiv
 Author URI:  http://pluginkollektiv.org
 Plugin URI:  https://wordpress.org/plugins/publish-confirm/
