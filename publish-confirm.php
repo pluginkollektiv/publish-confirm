@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Publish Confirm
-Description: Extra confirmation dialogue for the publish button, avoids publishing accidentally.
+Description: Extra confirmation dialogue for the publish button, avoids accidental publishing.
 Author:      pluginkollektiv
 Author URI:  http://pluginkollektiv.org
 Plugin URI:  https://wordpress.org/plugins/publish-confirm/
@@ -9,7 +9,7 @@ Text Domain: publish-confirm
 Domain Path: /lang
 License:     GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version:     0.1
+Version:     0.0.7
 */
 
 /*

@@ -88,10 +88,12 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 ## Changelog ##
-### 0.1 ###
+### 0.0.7 ###
+* added German formal translation
+* added POT file
 * standardized text domain to include a dash instead of an underscore
 * added filter to manage which post types the plugin functionality will apply to
-* updated author and contributors
+* updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
 
 ### 0.0.6 / 22.04.2015 ###
 * WordPress 4.2 support
