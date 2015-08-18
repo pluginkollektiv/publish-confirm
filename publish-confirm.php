@@ -1,14 +1,15 @@
 <?php
 /*
 Plugin Name: Publish Confirm
-Text Domain: publish_confirm
+Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
+Author:      pluginkollektiv
+Author URI:  http://pluginkollektiv.org
+Plugin URI:  https://wordpress.org/plugins/publish-confirm/
+Text Domain: publish-confirm
 Domain Path: /lang
-Description: Extra confirmation dialogue for the publish button, avoids publishing accidentally.
-Author: Sergej M&uuml;ller
-Author URI: http://wpcoder.de
-Plugin URI: https://wordpress.org/plugins/publish-confirm/
-License: GPLv2 or later
-Version: 0.0.6
+License:     GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Version:     0.0.7
 */
 
 /*
@@ -36,33 +37,33 @@ defined('ABSPATH') OR exit;
 
 /* Backend only */
 if ( ! is_admin() ) {
-    return;
+	return;
 }
 
 /* Fire! */
 define(
-    'PUBLISH_CONFIRM_BASE',
-    plugin_basename(__FILE__)
+	'PUBLISH_CONFIRM_BASE',
+	plugin_basename( __FILE__ )
 );
 
 require_once(
-    sprintf(
-        '%s/inc/publish_confirm.class.php',
-        dirname(__FILE__)
-    )
+	sprintf(
+		'%s/inc/publish_confirm.class.php',
+		dirname( __FILE__ )
+	)
 );
 
 add_action(
-    'admin_footer-post-new.php',
-    array(
-        'Publish_Confirm',
-        'inject_js'
-    )
+	'admin_footer-post-new.php',
+	array(
+		'Publish_Confirm',
+		'inject_js'
+	)
 );
 add_action(
-    'admin_footer-post.php',
-    array(
-        'Publish_Confirm',
-        'inject_js'
-    )
+	'admin_footer-post.php',
+	array(
+		'Publish_Confirm',
+		'inject_js'
+	)
 );
