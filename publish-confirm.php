@@ -1,19 +1,19 @@
 <?php
-/*
-Plugin Name: Publish Confirm
-Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
-Author:      pluginkollektiv
-Author URI:  http://pluginkollektiv.org
-Plugin URI:  https://wordpress.org/plugins/publish-confirm/
-Text Domain: publish-confirm
-Domain Path: /lang
-License:     GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version:     0.0.7
-*/
+/**
+ * Plugin Name: Publish Confirm
+ * Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
+ * Author:      pluginkollektiv
+ * Author URI:  http://pluginkollektiv.org
+ * Plugin URI:  https://wordpress.org/plugins/publish-confirm/
+ * Text Domain: publish-confirm
+ * Domain Path: /lang
+ * License:     GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Version:     0.0.8
+ */
 
 /*
-Copyright (C)  2014-2015 Sergej Müller
+Copyright (C)  2014-2015 Sergej Müller, pluginkollektiv
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 */
 
 /* Quit */
-defined( 'ABSPATH' ) OR exit;
+defined( 'ABSPATH' ) || exit;
 
 /* Backend only */
 if ( ! is_admin() ) {
@@ -39,29 +39,24 @@ if ( ! is_admin() ) {
 }
 
 /* Fire! */
-define(
-'PUBLISH_CONFIRM_BASE',
-plugin_basename( __FILE__ )
-);
+define( 'PUBLISH_CONFIRM_BASE', plugin_basename( __FILE__ ) );
 
-require_once(
-sprintf(
+require_once sprintf(
 	'%s/inc/publish_confirm.class.php',
 	dirname( __FILE__ )
-)
 );
 
 add_action(
 	'admin_footer-post-new.php',
 	array(
 		'Publish_Confirm',
-		'inject_js'
+		'inject_js',
 	)
 );
 add_action(
 	'admin_footer-post.php',
 	array(
 		'Publish_Confirm',
-		'inject_js'
+		'inject_js',
 	)
 );
