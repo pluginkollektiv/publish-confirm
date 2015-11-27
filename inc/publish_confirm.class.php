@@ -88,7 +88,7 @@ class Publish_Confirm {
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							if ( $( this ).val() !== <?php echo wp_json_encode( __( 'Publish' ) ) ?> ) {
+							if ( $( this ).val() !== <?php echo wp_json_encode( esc_attr__( 'Publish', 'publish-confirm' ) ) ?> ) {
 								return;
 							}
 							if ( ! confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
