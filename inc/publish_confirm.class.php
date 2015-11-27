@@ -1,8 +1,6 @@
 <?php
-
-/* Quit */
-defined('ABSPATH') OR exit;
-
+// Quit.
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Publish_Confirm
@@ -10,7 +8,6 @@ defined('ABSPATH') OR exit;
  * @since 0.0.3
  */
 class Publish_Confirm {
-
 
 	/**
 	 * Prepares the JS code integration
@@ -21,20 +18,21 @@ class Publish_Confirm {
 	 * @hook    array  publish_confirm_message
 	 */
 	public static function inject_js() {
-		/* Check user role */
+
+		// Check user role.
 		if ( ! current_user_can( 'publish_posts' ) ) {
 			return;
 		}
 
-		/* Filter published posts */
+		// Filter published posts.
 		if ( get_post()->post_status === 'publish' ) {
 			return;
 		}
 
-		/* Optionally include/exclude post types */
+		// Optionally include/exclude post types.
 		$current_pt = get_post()->post_type;
 
-		// Filter post types
+		// Filter post types.
 		$include_pts = apply_filters(
 			'publish_confirm_post_types',
 			get_post_types()
@@ -45,35 +43,34 @@ class Publish_Confirm {
 			return;
 		}
 
-		/* jQuery loaded? */
-		if ( ! wp_script_is('jquery', 'done') ) {
+		// Is jQuery loaded.
+		if ( ! wp_script_is( 'jquery', 'done' ) ) {
 			return;
 		}
 
-		/* Default message */
+		// Default message.
 		$default = 'Are you sure you want to publish this now?';
 
-		/* Custom message */
+		// Custom message.
 		$msg = apply_filters(
 			'publish_confirm_message',
 			$default
 		);
 
-		/* Message not changed? */
+		// Is Message not changed.
 		if ( $msg === $default ) {
 			load_plugin_textdomain(
 				'publish-confirm',
-				false,
-				dirname( PUBLISH_CONFIRM_BASE ). '/lang/'
+				FALSE,
+				dirname( PUBLISH_CONFIRM_BASE ) . '/lang/'
 			);
 
 			$msg = __( $default, 'publish-confirm' );
 		}
 
-		/* Print javascript */
+		// Print javascript.
 		self::_print_js( $msg );
 	}
-
 
 	/**
 	 * Prints the JS code into the footer
@@ -81,19 +78,20 @@ class Publish_Confirm {
 	 * @since   0.0.3
 	 * @change  0.0.5
 	 *
-	 * @param   string  $msg  JS confirm message
+	 * @param   string $msg JS confirm message.
 	 */
-	private static function _print_js( $msg ) { ?>
+	private static function _print_js( $msg ) {
+		?>
 		<script type="text/javascript">
-			jQuery(document).ready(
-				function($){
+			jQuery( document ).ready(
+				function( $ ) {
 					$( '#publish' ).on(
 						'click',
-						function(event) {
-							if ( $(this).val() !== <?php echo json_encode( __( 'Publish' ) ) ?> ) {
+						function( event ) {
+							if ( $( this ).val() !== <?php echo wp_json_encode( __( 'Publish' ) ) ?> ) {
 								return;
 							}
-							if ( ! confirm(<?php echo json_encode($msg) ?>) ) {
+							if ( ! confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
 								event.preventDefault();
 							}
 						}
