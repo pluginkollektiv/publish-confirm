@@ -33,7 +33,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 // Quit, if now WP environment.
 defined( 'ABSPATH' ) || exit;
 
-// Backend only
+// Backend only.
 if ( ! is_admin() ) {
 	return;
 }
@@ -46,17 +46,4 @@ require_once sprintf(
 	dirname( __FILE__ )
 );
 
-add_action(
-	'admin_footer-post-new.php',
-	array(
-		'Publish_Confirm',
-		'inject_js',
-	)
-);
-add_action(
-	'admin_footer-post.php',
-	array(
-		'Publish_Confirm',
-		'inject_js',
-	)
-);
+add_action( 'admin_init', array( Publish_Confirm::get_instance(), 'setup' ) );

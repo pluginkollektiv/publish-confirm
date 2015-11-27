@@ -10,11 +10,74 @@ defined( 'ABSPATH' ) || exit;
 class Publish_Confirm {
 
 	/**
+	 * Plugin instance.
+	 *
+	 * @see get_instance()
+	 * @type object
+	 * @var $instance
+	 */
+	protected static $instance = NULL;
+
+	/**
+	 * Get instance.
+	 *
+	 * @return Publish_Confirm
+	 */
+	public static function get_instance() {
+
+		if ( ! self::$instance instanceof self ) {
+			self::$instance = new self;
+		}
+
+		return self::$instance;
+	}
+
+	/**
 	 * Publish_Confirm constructor.
 	 */
 	public function __construct() {
+	}
 
-		$this->localize();
+	/**
+	 * Run the plugin working instance.
+	 */
+	public function setup() {
+
+		// Check user role.
+		if ( ! current_user_can( 'publish_posts' ) ) {
+			return;
+		}
+
+		self::localize();
+
+		foreach ( array( 'post-new.php', 'post.php' ) as $page ) {
+			add_action( 'admin_footer-' . $page, array( $this, 'inject_js' ), 11 );
+		}
+	}
+
+	/**
+	 * Validate for the allowed post types.
+	 */
+	private function validate_post_type() {
+
+		// Filter published posts.
+		if ( get_post()->post_status === 'publish' ) {
+			return;
+		}
+
+		// Optionally include/exclude post types.
+		$current_pt = get_post()->post_type;
+
+		// Filter post types.
+		$include_pts = apply_filters(
+			'publish_confirm_post_types',
+			get_post_types()
+		);
+
+		// Bail if current PT is not in PT stack.
+		if ( ! in_array( $current_pt, (array) $include_pts ) ) {
+			return;
+		}
 	}
 
 	/**
@@ -27,7 +90,7 @@ class Publish_Confirm {
 		load_plugin_textdomain(
 			'publish-confirm',
 			FALSE,
-			dirname( PUBLISH_CONFIRM_BASE ) . '/lang/'
+			dirname( PUBLISH_CONFIRM_BASE ) . '/lang'
 		);
 	}
 
@@ -55,29 +118,7 @@ class Publish_Confirm {
 	 */
 	public static function inject_js() {
 
-		// Check user role.
-		if ( ! current_user_can( 'publish_posts' ) ) {
-			return;
-		}
-
-		// Filter published posts.
-		if ( get_post()->post_status === 'publish' ) {
-			return;
-		}
-
-		// Optionally include/exclude post types.
-		$current_pt = get_post()->post_type;
-
-		// Filter post types.
-		$include_pts = apply_filters(
-			'publish_confirm_post_types',
-			get_post_types()
-		);
-
-		// Bail if current PT is not in PT stack.
-		if ( ! in_array( $current_pt, (array) $include_pts ) ) {
-			return;
-		}
+		self::validate_post_type();
 
 		// Is jQuery loaded.
 		if ( ! wp_script_is( 'jquery', 'done' ) ) {
@@ -105,11 +146,10 @@ class Publish_Confirm {
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							console.log($( this ).val());
 							if ( $( this ).val() !== <?php echo wp_json_encode( esc_attr__( 'Publish' ) ) ?> ) {
 								return;
 							}
-							if ( ! confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
+							if ( !confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
 								event.preventDefault();
 							}
 						}
