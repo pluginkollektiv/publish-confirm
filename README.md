@@ -3,7 +3,7 @@
 * Tags:              publish, posts, confirm, confirmation, dialogue
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.9
-* Tested up to:      4.3
+* Tested up to:      4.4
 * Stable tag:        trunk
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 
 
 ### Memory Usage ###
-* Back-end: ~ 0.02 MB
+* Back-end: ~ 0.01 MB
 * Front-end: ~ 0.01 MB
 
 
@@ -88,6 +88,11 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 ## Changelog ##
+### 0.0.8 ###
+* WordPress 4.4 check
+* Confirm to WP code codex
+* Filter translatable strings
+
 ### 0.0.7 ###
 * added German formal translation
 * added POT file
