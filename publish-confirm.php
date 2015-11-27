@@ -30,15 +30,15 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-/* Quit */
+// Quit, if now WP environment.
 defined( 'ABSPATH' ) || exit;
 
-/* Backend only */
+// Backend only
 if ( ! is_admin() ) {
 	return;
 }
 
-/* Fire! */
+// Fire!
 define( 'PUBLISH_CONFIRM_BASE', plugin_basename( __FILE__ ) );
 
 require_once sprintf(
