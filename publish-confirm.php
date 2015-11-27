@@ -42,7 +42,7 @@ if ( ! is_admin() ) {
 define( 'PUBLISH_CONFIRM_BASE', plugin_basename( __FILE__ ) );
 
 require_once sprintf(
-	'%s/inc/publish_confirm.class.php',
+	'%s/inc/publish-confirm.php',
 	dirname( __FILE__ )
 );
 
