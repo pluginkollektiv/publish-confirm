@@ -10,6 +10,42 @@ defined( 'ABSPATH' ) || exit;
 class Publish_Confirm {
 
 	/**
+	 * Publish_Confirm constructor.
+	 */
+	public function __construct() {
+
+		$this->localize();
+	}
+
+	/**
+	 * Load language file.
+	 *
+	 * @since 2015-11-27
+	 */
+	public function localize() {
+
+		load_plugin_textdomain(
+			'publish-confirm',
+			FALSE,
+			dirname( PUBLISH_CONFIRM_BASE ) . '/lang/'
+		);
+	}
+
+	/**
+	 * Get message for hint popup.
+	 *
+	 * @return mixed|void
+	 */
+	private function get_message() {
+
+		// Custom message.
+		return apply_filters(
+			'publish_confirm_message',
+			esc_attr__( 'Are you sure you want to publish this now?', 'publish-confirm' )
+		);
+	}
+
+	/**
 	 * Prepares the JS code integration
 	 *
 	 * @since   0.0.3
@@ -48,28 +84,8 @@ class Publish_Confirm {
 			return;
 		}
 
-		// Default message.
-		$default = 'Are you sure you want to publish this now?';
-
-		// Custom message.
-		$msg = apply_filters(
-			'publish_confirm_message',
-			$default
-		);
-
-		// Is Message not changed.
-		if ( $msg === $default ) {
-			load_plugin_textdomain(
-				'publish-confirm',
-				FALSE,
-				dirname( PUBLISH_CONFIRM_BASE ) . '/lang/'
-			);
-
-			$msg = __( $default, 'publish-confirm' );
-		}
-
 		// Print javascript.
-		self::_print_js( $msg );
+		self::_print_js( self::get_message() );
 	}
 
 	/**
@@ -81,6 +97,7 @@ class Publish_Confirm {
 	 * @param   string $msg JS confirm message.
 	 */
 	private static function _print_js( $msg ) {
+
 		?>
 		<script type="text/javascript">
 			jQuery( document ).ready(
@@ -88,7 +105,8 @@ class Publish_Confirm {
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							if ( $( this ).val() !== <?php echo wp_json_encode( esc_attr__( 'Publish', 'publish-confirm' ) ) ?> ) {
+							console.log($( this ).val());
+							if ( $( this ).val() !== <?php echo wp_json_encode( esc_attr__( 'Publish' ) ) ?> ) {
 								return;
 							}
 							if ( ! confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
