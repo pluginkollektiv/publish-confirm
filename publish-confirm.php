@@ -30,10 +30,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-
 /* Quit */
-defined('ABSPATH') OR exit;
-
+defined( 'ABSPATH' ) OR exit;
 
 /* Backend only */
 if ( ! is_admin() ) {
@@ -42,15 +40,15 @@ if ( ! is_admin() ) {
 
 /* Fire! */
 define(
-	'PUBLISH_CONFIRM_BASE',
-	plugin_basename( __FILE__ )
+'PUBLISH_CONFIRM_BASE',
+plugin_basename( __FILE__ )
 );
 
 require_once(
-	sprintf(
-		'%s/inc/publish_confirm.class.php',
-		dirname( __FILE__ )
-	)
+sprintf(
+	'%s/inc/publish_confirm.class.php',
+	dirname( __FILE__ )
+)
 );
 
 add_action(
