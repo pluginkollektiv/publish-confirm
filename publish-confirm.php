@@ -39,8 +39,8 @@ if ( ! is_admin() ) {
 }
 
 // Fire!
-define( 'PUBLISH_CONFIRM_BASE', plugin_dir_path( __FILE__ ) );
+define( 'PUBLISH_CONFIRM_BASEDIR', dirname( plugin_basename( __FILE__ ) ) );
 
-require_once PUBLISH_CONFIRM_BASE . 'inc/publish-confirm.php';
+require_once dirname( __FILE__ ) . '/inc/publish-confirm.php';
 
 add_action( 'admin_init', array( Publish_Confirm::get_instance(), 'setup' ) );

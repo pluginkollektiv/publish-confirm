@@ -90,7 +90,7 @@ class Publish_Confirm {
 		load_plugin_textdomain(
 			'publish-confirm',
 			FALSE,
-			dirname( PUBLISH_CONFIRM_BASE ) . '/lang'
+			PUBLISH_CONFIRM_BASEDIR . '/lang'
 		);
 	}
 
