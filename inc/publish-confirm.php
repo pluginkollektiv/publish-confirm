@@ -133,7 +133,7 @@ class Publish_Confirm {
 	 * Prints the JS code into the footer
 	 *
 	 * @since   0.0.3
-	 * @change  0.0.5
+	 * @change  2015-11-30
 	 *
 	 * @param   string $msg JS confirm message.
 	 */
@@ -146,10 +146,10 @@ class Publish_Confirm {
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							if ( $( this ).val() !== <?php echo wp_json_encode( esc_attr__( 'Publish' ) ) ?> ) {
+							if ( $( this ).attr( 'name' ) !== 'publish' ) {
 								return;
 							}
-							if ( !confirm(<?php echo wp_json_encode( $msg ) ?>) ) {
+							if ( ! confirm( <?php echo wp_json_encode( $msg ) ?> ) ) {
 								event.preventDefault();
 							}
 						}
