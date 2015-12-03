@@ -58,7 +58,7 @@ class Publish_Confirm {
 	/**
 	 * Validate for the allowed post types.
 	 */
-	private function validate_post_type() {
+	private static function validate_post_type() {
 
 		// Filter published posts.
 		if ( get_post()->post_status === 'publish' ) {
@@ -99,7 +99,7 @@ class Publish_Confirm {
 	 *
 	 * @return mixed|void
 	 */
-	private function get_message() {
+	private static function get_message() {
 
 		// Custom message.
 		return apply_filters(
