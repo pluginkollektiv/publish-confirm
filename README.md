@@ -48,7 +48,7 @@ Yup.
 ### Can I limit/extend the plugin’s functionality for a custom selection of post types? ###
 Yes, you can, via PHP filter from a custom plugin or from your theme’s functions.php. By default, the plugin will consider all [registered post types](https://developer.wordpress.org/reference/functions/register_post_type/). As an example, you could only have a confirmation dialogue for public post types, excluding attachments, like this:
 
-`add_filter(
+<pre>add_filter(
 	'publish_confirm_post_types',
 	function ( $post_types ) {
 
@@ -60,11 +60,11 @@ Yes, you can, via PHP filter from a custom plugin or from your theme’s functio
 
 		return $post_types;
 	}
-);`
+);</pre>
 
 Or you can exclude your particular custom post type from the confirmation dialogue like so:
 
-`add_filter(
+<pre>add_filter(
 	'publish_confirm_post_types',
 	function ( $post_types ) {
 
@@ -74,20 +74,23 @@ Or you can exclude your particular custom post type from the confirmation dialog
 
 		return $post_types;
 	}
-);`
+);</pre>
 
 ### Is there any way to change the default dialogue message into something else? ###
 The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme’s functions.php:
 
-`add_filter(
+<pre>add_filter(
 	'publish_confirm_message',
 	function( $msg ) {
 		return "You’re about to send this out into the world.\nHave you added a kitten pic?";
 	}
-);`
+);</pre>
 
 
 ## Changelog ##
+### 0.0.9 ###
+* Code cleanup, props [@bueltge](profiles.wordpress.org/bueltge/)
+
 ### 0.0.8 ###
 * WordPress 4.4 check
 * Confirm to WP code codex
