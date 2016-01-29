@@ -1,19 +1,19 @@
 <?php
-/*
-Plugin Name: Publish Confirm
-Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
-Author:      pluginkollektiv
-Author URI:  http://pluginkollektiv.org
-Plugin URI:  https://wordpress.org/plugins/publish-confirm/
-Text Domain: publish-confirm
-Domain Path: /lang
-License:     GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Version:     0.0.7
-*/
+/**
+ * Plugin Name: Publish Confirm
+ * Description: Extra confirmation dialogue for the publish button to avoid accidental publishing.
+ * Author:      pluginkollektiv
+ * Author URI:  http://pluginkollektiv.org
+ * Plugin URI:  https://wordpress.org/plugins/publish-confirm/
+ * Text Domain: publish-confirm
+ * Domain Path: /lang
+ * License:     GPLv2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Version:     0.0.8
+ */
 
 /*
-Copyright (C)  2014-2015 Sergej Müller
+Copyright (C)  2014-2015 Sergej Müller, pluginkollektiv
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,40 +30,17 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+// Quit, if now WP environment.
+defined( 'ABSPATH' ) || exit;
 
-/* Quit */
-defined('ABSPATH') OR exit;
-
-
-/* Backend only */
+// Backend only.
 if ( ! is_admin() ) {
 	return;
 }
 
-/* Fire! */
-define(
-	'PUBLISH_CONFIRM_BASE',
-	plugin_basename( __FILE__ )
-);
+// Fire!
+define( 'PUBLISH_CONFIRM_BASEDIR', dirname( plugin_basename( __FILE__ ) ) );
 
-require_once(
-	sprintf(
-		'%s/inc/publish_confirm.class.php',
-		dirname( __FILE__ )
-	)
-);
+require_once dirname( __FILE__ ) . '/inc/publish-confirm.php';
 
-add_action(
-	'admin_footer-post-new.php',
-	array(
-		'Publish_Confirm',
-		'inject_js'
-	)
-);
-add_action(
-	'admin_footer-post.php',
-	array(
-		'Publish_Confirm',
-		'inject_js'
-	)
-);
+add_action( 'admin_init', array( Publish_Confirm::get_instance(), 'setup' ) );
