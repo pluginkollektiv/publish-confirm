@@ -4,7 +4,7 @@
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.9
 * Tested up to:      4.6
-* Stable tag:        trunk
+* Stable tag:        0.1.0
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,12 +21,6 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 ### Memory Usage ###
 * Back-end: ~ 0.01 MB
 * Front-end: ~ 0.01 MB
-
-
-### Languages ###
-* English
-* Deutsch
-* Русский
 
 
 ### Credits ###
