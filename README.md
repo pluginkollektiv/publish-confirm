@@ -3,7 +3,7 @@
 * Tags:              publish, posts, confirm, confirmation, dialogue
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
 * Requires at least: 3.9
-* Tested up to:      4.4
+* Tested up to:      4.6
 * Stable tag:        trunk
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -88,17 +88,10 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 ## Changelog ##
-### 0.0.9 ###
+### 0.1.0 ###
 * Code cleanup, props [@bueltge](profiles.wordpress.org/bueltge/)
-
-### 0.0.8 ###
-* WordPress 4.4 check
-* Confirm to WP code codex
 * Filter translatable strings
-
-### 0.0.7 ###
-* added German formal translation
-* added POT file
+* Tested WordPress 4.6 compatibility
 * standardized text domain to include a dash instead of an underscore
 * added filter to manage which post types the plugin functionality will apply to
 * updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
