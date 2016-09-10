@@ -22,6 +22,15 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 * Back-end: ~ 0.01 MB
 * Front-end: ~ 0.01 MB
 
+### Support ###
+* Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/publish-confirm)
+* We don’t handle support via e-mail, Twitter, GitHub issues etc.
+
+### Contribute ###
+* Active development of this plugin is handled [on GitHub](https://github.com/pluginkollektiv/publish-confirm).
+* Pull requests for documented bugs are highly appreciated.
+* If you think you’ve found a bug (e.g. you’re experiencing unexpected behavior), please post at the [support forums](https://wordpress.org/support/plugin/publish-confirm) first.
+* If you want to help us translate this plugin you can do so [on WordPress Translate](https://translate.wordpress.org/projects/wp-plugins/publish-confirm).
 
 ### Credits ###
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
@@ -30,6 +39,9 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 
 ## Installation ##
 * If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
+
+### Requirements ###
+* WordPress 3.9 or greater
 
 
 ## Frequently Asked Questions ##
@@ -83,14 +95,14 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 ## Changelog ##
 ### 0.1.0 ###
-* Code cleanup, props [@bueltge](profiles.wordpress.org/bueltge/)
+* Code cleanup, props [@bueltge](https://profiles.wordpress.org/bueltge/)
 * Filter translatable strings
 * Tested WordPress 4.6 compatibility
 * standardized text domain to include a dash instead of an underscore
 * added filter to manage which post types the plugin functionality will apply to
 * updated [plugin authors](https://gist.github.com/glueckpress/f058c0ab973d45a72720)
 
-### 0.0.6 / 22.04.2015 ###
+### 0.0.6 ###
 * WordPress 4.2 support
 * Russian translation
 
