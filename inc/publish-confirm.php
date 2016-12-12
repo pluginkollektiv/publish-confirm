@@ -16,7 +16,7 @@ class Publish_Confirm {
 	 * @type object
 	 * @var $instance
 	 */
-	protected static $instance = NULL;
+	protected static $instance;
 
 	/**
 	 * Get instance.
