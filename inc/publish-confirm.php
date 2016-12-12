@@ -75,7 +75,7 @@ class Publish_Confirm {
 		);
 
 		// Bail if current PT is not in PT stack.
-		if ( ! in_array( $current_pt, (array) $include_pts ) ) {
+		if ( ! in_array( $current_pt, (array) $include_pts, true ) ) {
 			return;
 		}
 	}
