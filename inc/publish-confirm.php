@@ -94,7 +94,7 @@ class Publish_Confirm {
 	/**
 	 * Get message for hint popup.
 	 *
-	 * @return mixed|void
+	 * @return string
 	 */
 	private static function get_message() {
 
