@@ -130,7 +130,7 @@ class Publish_Confirm {
 	 * Prints the JS code into the footer
 	 *
 	 * @since   0.0.3
-	 * @change  2015-11-30
+	 * @version 2015-11-30
 	 *
 	 * @param   string $msg JS confirm message.
 	 */
