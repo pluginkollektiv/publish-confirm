@@ -48,7 +48,7 @@ class Publish_Confirm {
 			return;
 		}
 
-		self::localize();
+		$this->localize();
 
 		foreach ( array( 'post-new.php', 'post.php' ) as $page ) {
 			add_action( 'admin_footer-' . $page, array( $this, 'inject_js' ), 11 );
