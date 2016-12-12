@@ -109,7 +109,7 @@ class Publish_Confirm {
 	 * Prepares the JS code integration
 	 *
 	 * @since   0.0.3
-	 * @change  0.0.4
+	 * @version 0.0.4
 	 *
 	 * @hook    array  publish_confirm_message
 	 */
