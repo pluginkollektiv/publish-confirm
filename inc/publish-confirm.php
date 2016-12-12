@@ -83,15 +83,12 @@ class Publish_Confirm {
 	/**
 	 * Load language file.
 	 *
-	 * @since 2015-11-27
+	 * @since   2015-11-27
+	 * @version 2016-12-12
 	 */
 	public function localize() {
 
-		load_plugin_textdomain(
-			'publish-confirm',
-			FALSE,
-			PUBLISH_CONFIRM_BASEDIR . '/lang'
-		);
+		load_plugin_textdomain( 'publish-confirm' )
 	}
 
 	/**
