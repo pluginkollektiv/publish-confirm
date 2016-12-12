@@ -88,7 +88,7 @@ class Publish_Confirm {
 	 */
 	public function localize() {
 
-		load_plugin_textdomain( 'publish-confirm' )
+		load_plugin_textdomain( 'publish-confirm' );
 	}
 
 	/**
