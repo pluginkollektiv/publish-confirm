@@ -94,9 +94,10 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 ## Changelog ##
-### 0.1.1 ###
+### 1.0.0 ###
 * Usage of translations now only via https://translate.wordpress.org/projects/wp-plugins/publish-confirm.
 * Code cleanup in really small points.
+* On the edge: First major version.
 
 ### 0.1.0 ###
 * Code cleanup, props [@bueltge](https://profiles.wordpress.org/bueltge/)
