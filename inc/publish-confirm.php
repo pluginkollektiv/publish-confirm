@@ -1,5 +1,5 @@
 <?php
-// Quit.
+/** Quit. */
 defined( 'ABSPATH' ) || exit;
 
 /**
