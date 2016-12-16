@@ -17,11 +17,6 @@ Accidentally published a WordPress post too early once too often, instead of sav
 
 Once a post has been published, the confirmation dialogue will not appear anymore for that post.
 
-
-### Memory Usage ###
-* Back-end: ~ 0.01 MB
-* Front-end: ~ 0.01 MB
-
 ### Support ###
 * Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/publish-confirm)
 * We don’t handle support via e-mail, Twitter, GitHub issues etc.
