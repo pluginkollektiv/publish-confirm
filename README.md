@@ -69,7 +69,7 @@ Or you can exclude your particular custom post type from the confirmation dialog
 			return $post_types;
 		}
 	);
-	```php
+	```
 
 ### Is there any way to change the default dialogue message into something else? ###
 The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme’s functions.php:
@@ -81,6 +81,7 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 			return "You’re about to send this out into the world.\nHave you added a kitten pic?";
 		}
 	);
+	```
 
 
 ## Changelog ##
