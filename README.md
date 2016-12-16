@@ -45,7 +45,7 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 
 
 ## Frequently Asked Questions ##
-### Does _Publish Confirm_ work for posts and pages? ###
+### Does *Publish Confirm* work for posts and pages? ###
 Yes, it does.
 
 ### And Custom Post Types? ###
@@ -83,7 +83,7 @@ Or you can exclude your particular custom post type from the confirmation dialog
 );</pre>
 
 ### Is there any way to change the default dialogue message into something else? ###
-The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme’s functions.php:
+The message text in the publishing dialogue can be changed via PHP filter from a custom plugin or your theme's functions.php:
 
 <pre>add_filter(
 	'publish_confirm_message',
