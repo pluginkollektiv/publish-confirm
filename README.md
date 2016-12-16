@@ -92,7 +92,7 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 ### 1.0.0 ###
 * Usage of translations now only via https://translate.wordpress.org/projects/wp-plugins/publish-confirm.
 * Code cleanup in really small points.
-* On the edge: First major version.
+* On the edge: First major version, usage of [Semantic Versioning](http://semver.org/).
 
 ### 0.1.0 ###
 * Code cleanup, props [@bueltge](https://profiles.wordpress.org/bueltge/)
