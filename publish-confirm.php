@@ -9,11 +9,11 @@
  * Domain Path: /lang
  * License:     GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
- * Version:     0.1.0
+ * Version:     0.1.1
  */
 
 /*
-Copyright (C)  2014-2015 Sergej Müller, pluginkollektiv
+Copyright (C)  2014-2016 Sergej Müller, pluginkollektiv
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,8 +39,6 @@ if ( ! is_admin() ) {
 }
 
 // Fire!
-define( 'PUBLISH_CONFIRM_BASEDIR', dirname( plugin_basename( __FILE__ ) ) );
-
 require_once dirname( __FILE__ ) . '/inc/publish-confirm.php';
 
 add_action( 'admin_init', array( Publish_Confirm::get_instance(), 'setup' ) );

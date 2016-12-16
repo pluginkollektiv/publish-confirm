@@ -16,7 +16,7 @@ class Publish_Confirm {
 	 * @type object
 	 * @var $instance
 	 */
-	protected static $instance = NULL;
+	protected static $instance;
 
 	/**
 	 * Get instance.
@@ -48,7 +48,7 @@ class Publish_Confirm {
 			return;
 		}
 
-		self::localize();
+		$this->localize();
 
 		foreach ( array( 'post-new.php', 'post.php' ) as $page ) {
 			add_action( 'admin_footer-' . $page, array( $this, 'inject_js' ), 11 );
@@ -75,7 +75,7 @@ class Publish_Confirm {
 		);
 
 		// Bail if current PT is not in PT stack.
-		if ( ! in_array( $current_pt, (array) $include_pts ) ) {
+		if ( ! in_array( $current_pt, (array) $include_pts, true ) ) {
 			return;
 		}
 	}
@@ -83,21 +83,18 @@ class Publish_Confirm {
 	/**
 	 * Load language file.
 	 *
-	 * @since 2015-11-27
+	 * @since   2015-11-27
+	 * @version 2016-12-12
 	 */
 	public function localize() {
 
-		load_plugin_textdomain(
-			'publish-confirm',
-			FALSE,
-			PUBLISH_CONFIRM_BASEDIR . '/lang'
-		);
+		load_plugin_textdomain( 'publish-confirm' );
 	}
 
 	/**
 	 * Get message for hint popup.
 	 *
-	 * @return mixed|void
+	 * @return string
 	 */
 	private static function get_message() {
 
@@ -112,7 +109,7 @@ class Publish_Confirm {
 	 * Prepares the JS code integration
 	 *
 	 * @since   0.0.3
-	 * @change  0.0.4
+	 * @version 0.0.4
 	 *
 	 * @hook    array  publish_confirm_message
 	 */
@@ -133,7 +130,7 @@ class Publish_Confirm {
 	 * Prints the JS code into the footer
 	 *
 	 * @since   0.0.3
-	 * @change  2015-11-30
+	 * @version 2015-11-30
 	 *
 	 * @param   string $msg JS confirm message.
 	 */
