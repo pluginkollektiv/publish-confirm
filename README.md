@@ -27,7 +27,7 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 * If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
 
 ### Requirements ###
-* WordPress 4.5 or greater
+* WordPress 4.5 or greater, smaller versions maybe also possible, but untested.
 
 
 ## Frequently Asked Questions ##

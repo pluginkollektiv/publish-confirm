@@ -2,8 +2,8 @@
 * Contributors:      pluginkollektiv
 * Tags:              publish, posts, confirm, confirmation, dialogue
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
-* Requires at least: 3.9
-* Tested up to:      4.7
+* Requires at least: 4.5
+* Tested up to:      4.7.2
 * Stable tag:        1.0.0
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,7 +36,7 @@ Once a post has been published, the confirmation dialogue will not appear anymor
 * If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
 
 = Requirements =
-* WordPress 4.5 or greater
+* WordPress 4.5 or greater, smaller versions maybe also possible, but untested.
 
 
 == Frequently Asked Questions ==
