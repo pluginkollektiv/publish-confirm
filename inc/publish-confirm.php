@@ -143,7 +143,7 @@ class Publish_Confirm {
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							if ( $( this ).attr( 'name' ) !== 'publish' ) {
+							if ( $( this ).attr( 'name' ) !== 'publish' || $( this ).attr( 'value' ) == 'Schedule' ) {
 								return;
 							}
 							if ( ! confirm( <?php echo wp_json_encode( $msg ) ?> ) ) {
