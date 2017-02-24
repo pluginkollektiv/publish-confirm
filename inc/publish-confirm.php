@@ -140,10 +140,11 @@ class Publish_Confirm {
 		<script type="text/javascript">
 			jQuery( document ).ready(
 				function( $ ) {
+					var scheduleLabel = postL10n.schedule; // if the language is English, this is "Schedule"
 					$( '#publish' ).on(
 						'click',
 						function( event ) {
-							if ( $( this ).attr( 'name' ) !== 'publish' ) {
+							if ( $( this ).attr( 'name' ) !== 'publish' || $( this ).attr( 'value' ) === scheduleLabel ) {
 								return;
 							}
 							if ( ! confirm( <?php echo wp_json_encode( $msg ) ?> ) ) {
