@@ -1,7 +1,7 @@
 === Publish Confirm ===
 * Contributors:      pluginkollektiv
 * Tags:              publish, posts, confirm, confirmation, dialogue
-* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8CH5FPR88QYML
+* Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 4.5
 * Tested up to:      4.7.2
 * Stable tag:        1.0.0
