@@ -3,8 +3,8 @@
 * Tags:              publish, posts, confirm, confirmation, dialogue
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 4.5
-* Tested up to:      4.7.2
-* Stable tag:        1.0.0
+* Tested up to:      4.7.3
+* Stable tag:        1.0.1
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,9 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 == Changelog ==
+= 1.0.1 (2017-03-09) =
+* Added Exception for 'Schedule' button.
+
 = 1.0.0 (2016-12-16) =
 * Usage of translations now only via [translate.wordpress.org/projects/wp-plugins/publish-confirm](https://translate.wordpress.org/projects/wp-plugins/publish-confirm).
 * Code cleanup in really small points.
