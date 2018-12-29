@@ -1,5 +1,10 @@
 # Publish Confirm #
 
+**As the Gutenberg editor introduced in WordPress 5.0 contains a similar functionality,
+    the development of this plugin is discontinued.**
+The plugin only supports the classic editor 
+    (works fine even when using WordPress 5.0 with the *Classic Editor* plugin).
+
 Extra confirmation dialogue for the publish button to avoid accidental publishing.
 
 
@@ -8,26 +13,10 @@ Accidentally published a WordPress post too early once too often, instead of sav
 
 Once a post has been published, the confirmation dialogue will not appear anymore for that post.
 
-### Support ###
-* Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/publish-confirm)
-* We don’t handle support via e-mail, Twitter, GitHub issues etc.
-
-### Contribute ###
-* Active development of this plugin is handled [on GitHub](https://github.com/pluginkollektiv/publish-confirm).
-* Pull requests for documented bugs are highly appreciated.
-* If you think you’ve found a bug (e.g. you’re experiencing unexpected behavior), please post at the [support forums](https://wordpress.org/support/plugin/publish-confirm) first.
-* If you want to help us translate this plugin you can do so [on WordPress Translate](https://translate.wordpress.org/projects/wp-plugins/publish-confirm).
 
 ### Credits ###
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
-* Maintainers: [pluginkollektiv](http://pluginkollektiv.org/)
-
-
-## Installation ##
-* If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
-
-### Requirements ###
-* WordPress 4.5 or greater, smaller versions maybe also possible, but untested.
+* Maintainers: [pluginkollektiv](https://pluginkollektiv.org/)
 
 
 ## Frequently Asked Questions ##
