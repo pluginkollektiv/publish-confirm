@@ -3,7 +3,7 @@
 * Tags:              publish, posts, confirm, confirmation, dialogue
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 4.5
-* Tested up to:      4.7.3
+* Tested up to:      5.0
 * Stable tag:        1.0.1
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,30 +13,16 @@ Extra confirmation dialogue for the publish button to avoid accidental publishin
 
 
 == Description ==
+**As the Gutenberg editor introduced in WordPress 5.0 contains a similar functionality, the development of this plugin is discontinued.**
+The plugin only supports the classic editor (even when using WordPress 5.0 with the *Classic Editor* plugin).
+
 Accidentally published a WordPress post too early once too often, instead of saving it as a draft? This lightweight WordPress plugin implements an extra confirmation dialogue between your click on the *Publish* button and its actual processing. Simple and effective—never publish by accident again!
 
 Once a post has been published, the confirmation dialogue will not appear anymore for that post.
 
-= Support =
-* Community support via the [support forums on wordpress.org](https://wordpress.org/support/plugin/publish-confirm)
-* We don’t handle support via e-mail, Twitter, GitHub issues etc.
-
-= Contribute =
-* Active development of this plugin is handled [on GitHub](https://github.com/pluginkollektiv/publish-confirm).
-* Pull requests for documented bugs are highly appreciated.
-* If you think you’ve found a bug (e.g. you’re experiencing unexpected behavior), please post at the [support forums](https://wordpress.org/support/plugin/publish-confirm) first.
-* If you want to help us translate this plugin you can do so [on WordPress Translate](https://translate.wordpress.org/projects/wp-plugins/publish-confirm).
-
 = Credits =
 * Author: [Sergej Müller](https://sergejmueller.github.io/)
-* Maintainers: [pluginkollektiv](http://pluginkollektiv.org/)
-
-
-== Installation ==
-* If you don’t know how to install a plugin for WordPress, [here’s how](http://codex.wordpress.org/Managing_Plugins#Installing_Plugins).
-
-= Requirements =
-* WordPress 4.5 or greater, smaller versions maybe also possible, but untested.
+* Maintainers: [pluginkollektiv](https://pluginkollektiv.org/)
 
 
 == Frequently Asked Questions ==
