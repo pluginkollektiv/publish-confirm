@@ -4,7 +4,7 @@
 * Donate link:       https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=TD4AMD2D8EMZW
 * Requires at least: 4.5
 * Tested up to:      5.0
-* Stable tag:        1.0.1
+* Stable tag:        1.0.2
 * License:           GPLv2 or later
 * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 
 == Changelog ==
+= 1.0.2 (2018-01-08) =
+* Discontinued Publish Confirm
+
 = 1.0.1 (2017-03-09) =
 * Added Exception for 'Schedule' button.
 
@@ -103,3 +106,9 @@ The message text in the publishing dialogue can be changed via PHP filter from a
 
 = 0.0.3 =
 * *Publish Confirm* goes wordpress.org
+
+
+== Upgrade Notice ==
+
+= 1.0.2 =
+As the Gutenberg editor introduced in WordPress 5.0 contains a similar functionality, the development of this plugin is discontinued.
